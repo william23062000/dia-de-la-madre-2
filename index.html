@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Día de las Madres</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #fff0f5, #fbeaff);
+      overflow: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      color: #6a1b9a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .mensaje {
+      z-index: 10;
+      max-width: 800px;
+      padding: 40px;
+      background-color: #ffffffcc;
+      border-radius: 30px;
+      box-shadow: 0 0 30px #e1bee7;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #ad1457;
+    }
+
+    p {
+      font-size: 1.4em;
+      line-height: 1.6;
+    }
+
+    .corazon {
+      position: absolute;
+      top: -50px;
+      font-size: 30px;
+      opacity: 0.3;
+      animation: caer 8s linear infinite;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    @keyframes caer {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mensaje">
+    <h1>Feliz Día de las Madres</h1>
+    <p>
+      Mamá, gracias por ser mi fuerza en los momentos difíciles y mi alegría en los días buenos. No hay palabras suficientes para agradecer todo lo que haces por mí: tus sacrificios, tus cuidados, tus abrazos que sanan y tu amor que nunca falla. Eres mi ejemplo, mi guía y mi refugio. Te amo profundamente y le doy gracias a Dios por darme una madre como tú. Hoy solo quiero recordarte lo especial que eres para mí y lo mucho que vales. ¡Feliz día de las madres!
+    </p>
+  </div>
+
+  <script>
+    const emojis = ["💖", "💗", "💞", "💕", "💓", "💘"];
+    
+    function crearCorazon() {
+      const corazon = document.createElement('div');
+      corazon.classList.add('corazon');
+      corazon.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      corazon.style.left = Math.random() * 100 + "vw";
+      corazon.style.fontSize = (Math.random() * 20 + 20) + "px";
+      corazon.style.opacity = 0.2 + Math.random() * 0.5;
+      document.body.appendChild(corazon);
+      setTimeout(() => corazon.remove(), 8000);
+    }
+
+    setInterval(crearCorazon, 200);
+  </script>
+
+</body>
+</html>
